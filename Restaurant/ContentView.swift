@@ -10,8 +10,38 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        
+       
+        
+         VStack {
+            
+            ScrollView(.horizontal) {
+                
+                HStack {
+                Image("Mercury")
+                    .clipped()
+                    .clipShape(Circle())
+                Image("Pluto")
+                    .clipped()
+                    .clipShape(Circle())
+                Image("Earth")
+                    .clipped()
+                    .clipShape(Circle())
+                Image("Saturn")
+                    .clipped()
+                    .clipShape(Circle())
+                }
+                
+            }
+        //    Spacer()
+            
+            
+                ListItems()
+        }
+ 
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
