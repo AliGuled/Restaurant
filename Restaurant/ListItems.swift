@@ -23,7 +23,9 @@ struct ListItems: View {
                         
                         Text("McD")
                         Text("KFC")
-                        Text("ff")
+                        Text("JJ")
+                        Text("Subway")
+                        Text("Sagar")
                         
                     }.navigationBarTitle(Text("Restaurants"))
                 }
