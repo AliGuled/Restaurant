@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+   @State var isPresented = false
+    
     var body: some View {
-        
-       
-        
+      
          VStack {
             
             ScrollView(.horizontal, showsIndicators: false) {
@@ -25,7 +26,7 @@ struct ContentView: View {
                           
                         }.padding()
                        
-                            Image("veggie-pizza")
+                        Image("veggie-pizza")
                                 .clipped()
                                 .clipShape(Circle())
                                 .overlay(Circle().stroke(Color.blue, lineWidth: 2))
@@ -35,8 +36,13 @@ struct ContentView: View {
 
                     }.onTapGesture {
                         print("Tapped")
+                        self.isPresented.toggle()
+                        
                        
-                    }
+                    }.sheet(isPresented: $isPresented, content: {
+                        
+                        DetailView()
+                    })
 
                 
                     ZStack(alignment: .bottom) {
@@ -92,17 +98,16 @@ struct ContentView: View {
             }
             //Spacer()
 
-            ListItems()
+            //ListItems()
             Spacer()
         }
  
     }
     
-    
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
 }
