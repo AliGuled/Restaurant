@@ -17,7 +17,7 @@ struct ListItems: View {
         NavigationView{
             
             
-            NavigationLink("this", destination: DetailView())
+//            NavigationLink("this", destination: DetailView())
                 HStack {
                     List{
                         
